@@ -1,8 +1,9 @@
 import React from 'react';
 import axios from 'axios';
 import GalleryItem from '../GalleryItem/GalleryItem';
+import list from 'server/modules/gallery.data.js';
 
-function GalleryList(item, fetchList) {
+function GalleryList(item, list) {
 
 	return (
 		<div>
@@ -11,7 +12,7 @@ function GalleryList(item, fetchList) {
 				<GalleryItem item={item} />
 			</div>
 		</div>
-	)
+	);
 }
 
 export default GalleryList;
