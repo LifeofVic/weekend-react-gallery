@@ -5,12 +5,6 @@ img {
 	border: 1px solid black;
 }
 
-.gallery-list {
-	flex: auto;
-	flex-direction: row;
-
-}
-
 .image-container {
 	border: 2px solid gray;
 	border-radius: 10%;
@@ -19,6 +13,7 @@ img {
 	padding: 15px;
 	width: 200px;
 	min-width: 100px;
+	max-height: 350px;
 }
 
 button {
