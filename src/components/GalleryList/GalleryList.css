@@ -1,4 +1,4 @@
-div#gallery-list {
+#gallery-list {
 	display: flex;
 	flex-wrap: wrap;
 }

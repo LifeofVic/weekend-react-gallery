@@ -5,8 +5,10 @@ img {
 	border: 1px solid black;
 }
 
-.description {
-	
+.gallery-list {
+	flex: auto;
+	flex-direction: row;
+
 }
 
 .image-container {
@@ -14,10 +16,9 @@ img {
 	border-radius: 10%;
 	text-align: center;
 	margin: 20px;
-	padding: 20px;
-	width: fit-content;
+	padding: 15px;
+	width: 200px;
 	min-width: 100px;
-	padding: 10px;
 }
 
 button {
