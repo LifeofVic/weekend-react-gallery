@@ -13,6 +13,7 @@
 	font-size: 1.5em;
 }
 
-p, .App-header {
+p,
+.App-header {
 	max-width: auto;
 }
