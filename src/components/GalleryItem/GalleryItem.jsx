@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import axios from 'axios';
+import './GalleryItem.css';
 
 function GalleryItem({ image, fetchList }) {
 
@@ -20,16 +21,15 @@ function GalleryItem({ image, fetchList }) {
 				console.log('liked image', id);
 				fetchList();
 			}).catch(error => {
-				res.sendStatus(500);
-				console.log('Error in updating, in Axios.Put in APP.jsx')
+				console.log('Error in updating, in Axios.Put in APP.jsx', error)
 			});
 	}
 
 	return (
 		<div className='image-container' onClick={changeDisplay}>
 			<div>
-				{isClicked && <img className='image' src={image.path} />}
-				{!isClicked && <img className='description' src={image.description} />}
+				{!isClicked && <img className='image' src={image.path} />}
+				{isClicked && <text className='description' src={image.description} />}
 			</div>
 			<div>
 				<button onClick={() => likeGalleryItem(Number(image.id))}>

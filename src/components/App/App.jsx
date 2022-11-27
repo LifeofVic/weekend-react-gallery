@@ -4,18 +4,19 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import GalleryList from '../GalleryList/GalleryList';
 
-const [galleryList, setGalleryList] = useState([]);
-const [galleryItem, setGalleryItem] = useState(true);
+
 
 function App() {
+	const [galleryList, setGalleryList] = useState([]);
+
 	useEffect(() => {
 		fetchList();
-	});
+	}, []);
 
 	const fetchList = () => {
 		axios.get('/gallery')
 			.then(response => {
-				setGalleryList(response.data)
+				setGalleryList(response.data);
 			}).catch(error => {
 				alert('error ins Getting GalleryList')
 				console.log('Error in Axios.GET in APP.JXS', error);
@@ -27,9 +28,8 @@ function App() {
 			<header className="App-header">
 				<h1 className="App-title">Gallery of My Life</h1>
 			</header>
-			<p>Gallery goes here</p>
-			<img src="images/goat_small.jpg" />
-			<GalleryList />
+			<p>My Gallery</p>
+			<GalleryList list={galleryList} fetchList={fetchList} />
 		</div>
 	);
 }
