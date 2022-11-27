@@ -29,7 +29,7 @@ function GalleryItem({ image, fetchList }) {
 		<div className='image-container' onClick={changeDisplay}>
 			<div>
 				{!isClicked && <img className='image' src={image.path} />}
-				{isClicked && <text className='description' src={image.description} />}
+				{isClicked && <label className='description'> {image.description}  </label>}
 			</div>
 			<div>
 				<button onClick={() => likeGalleryItem(Number(image.id))}>
