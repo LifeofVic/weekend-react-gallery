@@ -8,10 +8,10 @@ function GalleryItem({ image, fetchList }) {
 	const [isClicked, setIsClicked] = useState(false);
 
 	const changeDisplay = () => {
-		if (isClicked === true) {
-			setIsClicked(false)
+		if (isClicked === false) {
+			setIsClicked(true)
 		} else {
-			setIsClicked(true);
+			setIsClicked(false);
 		}
 	}
 
@@ -26,8 +26,8 @@ function GalleryItem({ image, fetchList }) {
 	}
 
 	return (
-		<div className='image-container' onClick={changeDisplay}>
-			<div>
+		<div className='image-container' >
+			<div onClick={changeDisplay}>
 				{!isClicked && <img className='image' src={image.path} />}
 				{isClicked && <label className='description'> {image.description}  </label>}
 			</div>
