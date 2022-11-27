@@ -10,10 +10,10 @@ const [galleryItem, setGalleryItem] = useState(true);
 function App() {
 	useEffect(() => {
 		fetchList();
-	})
+	});
 
 	const fetchList = () => {
-		axios.get('/list')
+		axios.get('/gallery')
 			.then(response => {
 				setGalleryList(response.data)
 			}).catch(error => {
@@ -22,17 +22,6 @@ function App() {
 			});
 	}
 
-	const likeGalleryItem = (id) => {
-		axios.put('/list/like/${id}')
-			.then(response => {
-				fetchList();
-			}).catch(error => {
-				res.sendStatus(500);
-				console.log('Error in updating, in Axios.Put in APP.jsx')
-			});
-	}
-
-
 	return (
 		<div className="App">
 			<header className="App-header">
@@ -40,7 +29,7 @@ function App() {
 			</header>
 			<p>Gallery goes here</p>
 			<img src="images/goat_small.jpg" />
-		<GalleryList 
+			<GalleryList />
 		</div>
 	);
 }
